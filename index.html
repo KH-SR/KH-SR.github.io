@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>HTMLサンプル</title>
+  </head>
+  <body>
+    <script>
+      function btnact() {
+        window.webkit.messageHandlers.callbackHandler.postMessage(
+          "webViewから呼び出し123"
+        );
+        window.webkit.messageHandlers.callbackHandler.postMessage(
+          '{sample: "aaa"}'
+        );
+      }
+    </script>
+    <h1>サンプル</h1>
+    <br />
+    <input
+      type="button"
+      onclick="btnact();"
+      value="ぼたん"
+      style="width: 100%; height: 300px; font-size: 60px"
+    />
+    <form action="/index" name="form1" method="POST">
+      <input type="text" name="name" value="aaa" />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
